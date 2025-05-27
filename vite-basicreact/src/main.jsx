@@ -1,9 +1,43 @@
 import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import ReactDOM from 'react-dom/client'
+// import {jsx as _jsx} from "react/jsx-runtime.js"
 import App from './App.jsx'
+import React from 'react'
 
-createRoot(document.getElementById('root')).render(
+function MyApp(){
+    return(
+        <div>
+            <h1>
+                My App
+            </h1>
+        </div>
+    )
+}
 
-    <App />
+// const reactElement = {
+//     type: 'a',
+//     props:{
+//         href: 'https://google.com',
+//         target: '_blank'
+//     },
+//     children: 'click me to visit google'
+// }
+
+const nextElement = (
+    <a href="https://google.com" target="_blank">Visit google</a>
+)
+
+const anotherUser = "utsov 2"
+
+const reactElement = React.createElement(
+    'a',
+    {href: 'https://google.com', target: '_blank'},
+    'click me to visit google',
+    anotherUser
+)
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+
+    reactElement
 
 )
