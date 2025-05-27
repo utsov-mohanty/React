@@ -1,10 +1,14 @@
-
+import Utsov from "./utsov"
 
 function App() {
   
 
   return (
-    <h1>Hello from Vite!</h1>
+    <>
+    <Utsov/>
+    <h1>Hello</h1>
+    <p>from Vite</p>
+    </>
   )
 }
 
