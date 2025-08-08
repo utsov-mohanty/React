@@ -21,7 +21,7 @@ function Login() {
                 if(userData){
                     dispatch(authLogin(userData))
                 }
-                navigate('/')
+                navigate("/")
             }
         } catch (error) {
             setError(error.message)
@@ -57,7 +57,8 @@ function Login() {
                     {...register("email", {
                         required: true,
                         validate: {
-                            matchPattern: (value) => /^([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}$/.test(value) || "Email address must be a valid address",
+                            matchPattern: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
+                            "Email address must be a valid address",
                         }
                     })}
                     />
@@ -80,4 +81,4 @@ function Login() {
   )
 }
 
-export default Logince
+export default Login
