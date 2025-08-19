@@ -1,5 +1,5 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import {StrictMode} from 'react'
+import {createRoot} from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 import { Provider } from 'react-redux'
@@ -14,13 +14,14 @@ import AllPosts from './pages/AllPosts'
 import Post from './pages/Post'
 import Login from './pages/Login'
 
+
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <App/>,
     children:[
       {
-        path: '/',
+        path: "/",
         element: <Home />
       },
       {

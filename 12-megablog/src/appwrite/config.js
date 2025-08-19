@@ -86,9 +86,7 @@ export class Service{
             return await this.databases.listDocuments(
                 conf.appwriteDatabaseId,
                 conf.appwriteCollectionId,
-                queries,
-                
-
+                queries
             )
         } catch (error) {
             console.log("Appwrite serive :: getPosts :: error", error);
@@ -103,7 +101,7 @@ export class Service{
             return await this.bucket.createFile(
                 conf.appwriteBucketId,
                 ID.unique(),
-                file
+                file,
             )
         } catch (error) {
             console.log("Appwrite serive :: uploadFile :: error", error);
@@ -127,7 +125,8 @@ export class Service{
     getFilePreview(fileId){
         return this.bucket.getFilePreview(
             conf.appwriteBucketId,
-            fileId
+            fileId,
+            
         )
     }
 }
